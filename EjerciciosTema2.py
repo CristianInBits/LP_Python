@@ -111,3 +111,24 @@ existe()
 existe("palabra","a") # True
 
 # -----------------------------------------------------------------
+
+"""
+## Ejercicio 6: Conversión de tipos.
+Escribe un programa que:
+- Pida al usuario una edad (como string).
+- Convierta la edad a un número entero.
+- Determine si es mayor de edad (18 o más).
+- Muestre un mensaje adecuado usando una variable booleana.
+"""
+
+def conversion (edad = None):
+    if edad is None:
+        edad = int(input("Introduce la edad: ").strip())
+    
+    print(f"El usuario tiene {edad} años, ¿es mayor de edad? : {edad>=18}")
+
+conversion()    # Pide edad por teclado
+conversion(21)  # Directamente pasa un número, True
+conversion(17)  # Directamente pasa un número, False
+
+# -----------------------------------------------------------------
