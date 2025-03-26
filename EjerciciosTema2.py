@@ -92,3 +92,22 @@ cadenas("Cristian")
 cadenas() # → pide entrada
 
 # -----------------------------------------------------------------
+
+"""
+## Ejercicio 5: Manipulación de cadenas. 
+Escribe un programa que:
+- Pida al usuario una palabra y una letra.
+- Verifique si la letra se encuentra o no y se lo diga al usuario.
+"""
+
+def existe(palabra=None, letra=None):
+    if palabra is None or letra is None:
+        palabra = input("Introduce la palabra: ").strip()
+        letra = input("Introduce la letra: ").strip()
+    
+    print(f'¿La letra "{letra}" se encuentra en la palabra "{palabra}"? : {letra in palabra}')
+
+existe()
+existe("palabra","a") # True
+
+# -----------------------------------------------------------------
