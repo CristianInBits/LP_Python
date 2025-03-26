@@ -51,3 +51,23 @@ area()         # pide el radio por teclado
 area(3.5)      # calcula con un valor dado
 
 # -----------------------------------------------------------------
+
+"""
+## Ejercicio 3: Comparación de números.
+Escribe un programa que:
+- Pida dos números al usuario.
+- Determine si el primer número es mayor que el segundo y muestre el resultado como un booleano (True o False).
+"""
+
+def comparacion(numero1=None, numero2=None):
+    if numero1 is None or numero2 is None:
+        numero1 = float(input("Introduce el primer número a comparar: "))
+        numero2 = float(input("Introduce el segundo número a comparar: "))
+    
+    print(f"¿{numero1} es mayor que {numero2}? : {numero1>numero2}")
+
+comparacion(10, 5)      # → 10 es mayor que 5 ? : True
+comparacion(4.2, 9.1)   # → 4.2 es mayor que 9.1 ? : False
+comparacion()           # → pide datos por teclado
+
+# -----------------------------------------------------------------
