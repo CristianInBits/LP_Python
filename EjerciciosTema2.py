@@ -71,3 +71,24 @@ comparacion(4.2, 9.1)   # → 4.2 es mayor que 9.1 ? : False
 comparacion()           # → pide datos por teclado
 
 # -----------------------------------------------------------------
+
+"""
+## Ejercicio 4: Manipulación de cadenas.
+Escribe un programa que:
+- Pida al usuario una palabra.
+- Muestre el nombre en mayúsculas, minúsculas, con la primera letra en mayúscula y con las mayúsculas y minúsculas alternadas.
+"""
+
+def cadenas (nombre=None):
+    if nombre is None:
+        nombre = input("Introduce el nombre: ")
+
+    print("Mayúsculas:", nombre.upper())        # Mayúsculas
+    print("Minúsculas:", nombre.lower())        # Minúsculas
+    print("Capitalizada:", nombre.capitalize()) # Primera letra mayúscula
+    print("Alternadas:", nombre.swapcase())     # Mayúsculas y minúsculas alternadas
+
+cadenas("Cristian")
+cadenas() # → pide entrada
+
+# -----------------------------------------------------------------
