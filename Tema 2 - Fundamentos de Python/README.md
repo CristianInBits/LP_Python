@@ -10,7 +10,7 @@ Este directorio contiene el desarrollo de ejercicios y apuntes del **Tema 2** de
 |--------------------------|-------------|
 | `Tema2_conChat.py`       | Archivo de apuntes, explicaciones prácticas y ejercicios interactivos desarrollados paso a paso junto a ChatGPT. |
 | `EjerciciosTema2.py`     | Archivo con 6 ejercicios básicos resueltos, cada uno con su enunciado y función correspondiente. |
-| `ejercicios_extra/`      | Carpeta con ejercicios adicionales (7 al 11), cada uno en su archivo independiente para facilitar su ejecución y mantenimiento. |
+| `ejercicios_extra/`      | Carpeta con ejercicios adicionales, cada uno en su archivo independiente para facilitar su ejecución y mantenimiento. |
 
 ---
 
