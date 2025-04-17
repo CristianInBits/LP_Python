@@ -168,3 +168,120 @@ vowels = 'aeiou'
 word = 'onomatopoeia'
 vowel_counts = {letter: word.count(letter) for letter in set(word) if letter in vowels}
 print(vowel_counts)
+
+# -------------------- SETS --------------------
+
+# Crear sets
+empty_set = set()
+print(empty_set)  # set()
+
+even_numbers = {0, 2, 4, 6, 8}
+print(even_numbers)
+
+even_numbers2 = {8, 8, 8, 10, 4, 6}
+print(even_numbers2)
+
+# Crear sets desde otras estructuras
+print(set('letters'))
+print(set(['Dasher', 'Dancer', 'Prancer', 'Mason-Dixon']))
+print(set(('Ummagumma', 'Echoes', 'Atom Heart Mother')))
+print(set({'apple': 'red', 'orange': 'orange', 'cherry': 'red'}))
+
+# Tamaño
+reindeer = set(['Dasher', 'Dancer', 'Prancer', 'Mason-Dixon'])
+print(len(reindeer))
+
+# Añadir elementos
+s = set((1, 2, 3))
+s.add(4)
+print(s)
+
+# Eliminar elementos
+s = set((1, 2, 3))
+s.remove(3)
+print(s)
+
+# Recorrer sets
+furniture = set(('sofa', 'ottoman', 'table'))
+for piece in furniture:
+    print(piece)
+
+# Diccionario con valores tipo set
+drinks = {
+    'martini': {'vodka', 'vermouth'},
+    'black russian': {'vodka', 'kahlua'},
+    'white russian': {'cream', 'kahlua', 'vodka'},
+    'manhattan': {'rye', 'vermouth', 'bitters'},
+    'screwdriver': {'orange juice', 'vodka'}
+}
+
+# Consultas sobre bebidas
+for name, contents in drinks.items():
+    if 'vodka' in contents:
+        print(name)
+
+for name, contents in drinks.items():
+    if 'vodka' in contents and not ('vermouth' in contents or 'cream' in contents):
+        print(name)
+
+for name, contents in drinks.items():
+    if contents & {'vermouth', 'orange juice'}:
+        print(name)
+
+for name, contents in drinks.items():
+    if 'vodka' in contents and not contents & {'vermouth', 'cream'}:
+        print(name)
+
+# Operaciones con sets
+a = {1, 2}
+b = {2, 3}
+
+print(a & b)
+print(a.intersection(b))
+
+hard = drinks['black russian']
+soft = drinks['white russian']
+print(hard & soft)
+
+print(a | b)
+print(a.union(b))
+print(hard | soft)
+
+print(a - b)
+print(a.difference(b))
+print(hard - soft)
+print(soft - hard)
+
+print(a ^ b)
+print(a.symmetric_difference(b))
+print(hard ^ soft)
+
+print(a <= b)
+print(a.issubset(b))
+print(hard <= soft)
+
+print(a <= a)
+print(a.issubset(a))
+print(a < a)
+
+print(a >= b)
+print(a.issuperset(b))
+print(soft >= hard)
+print(a >= a)
+print(a.issuperset(a))
+print(a > a)
+
+# Sets por comprensión
+a_set = {number for number in range(1, 6) if number % 3 == 1}
+print(a_set)
+
+# Frozenset
+fs = frozenset([3, 2, 1])
+print(fs)
+# fs.add(4)  # Error: 'frozenset' object has no attribute 'add'
+
+# Recordatorio de tipos
+marx_list = ['Groucho', 'Chico', 'Harpo']
+marx_tuple = ('Groucho', 'Chico', 'Harpo')
+marx_dict = {'Groucho': 'banjo', 'Chico': 'piano', 'Harpo': 'harp'}
+marx_set = {'Groucho', 'Chico', 'Harpo'}
