@@ -92,7 +92,7 @@ for word in words:
     for letter in word:
         if letter in letter_counts:
             letter_counts[letter] += 1
-        else
+        else:
             letter_counts[letter] = 1
 
 print(letter_counts)
