@@ -95,3 +95,116 @@ print(f"'{most_common}' aparece {max_count} veces")
 # Versión 3, alternativa con una tupla:
 most_common2 = sorted(char_count.items(), key=lambda x: x[1], reverse=True)[0]
 print(f"'{most_common2[0]}' aparece {most_common2[1]} veces")
+
+
+## Ejercicio 4: IPs únicas
+"""
+Mediante el uso de un set, identifique el número de ips únicas:
+
+ip_logs = [
+	"192.168.0.1",
+	"10.0.0.1",
+	"192.168.0.1",
+	"10.0.0.2",
+	"10.0.0.1",
+	"192.168.0.2"
+]
+# Output: 4 unique IPs
+"""
+
+ip_logs = [
+	"192.168.0.1",
+	"10.0.0.1",
+	"192.168.0.1",
+	"10.0.0.2",
+	"10.0.0.1",
+	"192.168.0.2"
+]
+
+unique_ips = set(ip_logs)
+print(f"Total de IPs únicas: {len(unique_ips)}")
+
+
+## Ejercicio 5: Comparación de cursos
+"""
+Partiendo de los siguientes sets:
+    alice_courses = {"Math", "Electronics", "AI", "Data Structures"}
+    bob_courses = {"AI", "Cybersecurity", "Math", "Robotics"}
+
+- Encontrar los cursos en común.
+- Encontrar los cursos que sólo Alice asiste.
+- Encontrar los cursos que sólo uno de ellos asiste.
+"""
+
+alice_courses = {"Math", "Electronics", "AI", "Data Structures"}
+bob_courses = {"AI", "Cybersecurity", "Math", "Robotics"}
+
+# Cursos en común
+common_courses = alice_courses & bob_courses
+common_courses2 = alice_courses.intersection(bob_courses)
+print("Cursos en común:", common_courses)
+print("Cursos en común:", common_courses2)
+
+# Solo Alice
+only_alice = alice_courses - bob_courses
+only_alice2 = alice_courses.difference(bob_courses)
+print("Solo Alice:", only_alice)
+print("Solo Alice:", only_alice2)
+
+# Solo uno de los dos
+only_one = alice_courses ^ bob_courses
+only_one2 = alice_courses.symmetric_difference(bob_courses)
+print("Solo uno de ellos:", only_one)
+print("Solo uno de ellos:", only_one2)
+
+
+
+## Ejercicio 6: Detección de duplicados en MACs
+"""
+Indicar si hay ips duplicadas:
+    mac_addresses = ["00:1B:44:11:3A:B7", "00:1B:44:11:3A:B8 "00:1B:44:11:3A:B7"]
+# Output: True (there are duplicates)
+"""
+
+mac_addresses = ["00:1B:44:11:3A:B7", "00:1B:44:11:3A:B8", "00:1B:44:11:3A:B7"]
+
+has_duplicates = len(mac_addresses) != len(set(mac_addresses))
+print("¿Hay duplicados?:", has_duplicates)
+
+
+
+## Ejercicio 7: Invertir diccionario
+"""
+Crea y muestra un diccionario invertido mediante diccionarios por comprensión a partir del siguiente diccionario:
+# Diccionario original: asignatura → profesor
+profesores = {
+	"Física": "Ana",
+	"Química": "Luis",
+	"Matemáticas": "Ana",
+	"Informática": "Carlos"
+}
+# Diccionario invertido: profesor -> asignatura/s
+"""
+
+subjects = {
+	"Physics": "Ana",
+	"Chemistry": "Luis",
+	"Mathematics": "Ana",
+	"Computer Science": "Carlos"
+}
+
+# Crear un nuevo diccionario: teacher → lista de subjects
+inverted = {}
+for subject, teacher in subjects.items():
+    if teacher in inverted:
+        inverted[teacher].append(subject)
+    else:
+        inverted[teacher] = [subject]
+
+print(inverted)
+
+# {'Ana': ['Physics', 'Mathematics'], 'Luis': ['Chemistry'], 'Carlos': ['Computer Science']}
+
+# Alternativa con diccionario por comprensión (menos eficiente pero válido):
+inverted2 = {teacher: [s for s in subjects if subjects[s] == teacher] for teacher in set(subjects.values())}
+print(inverted2)
