@@ -56,3 +56,43 @@ for key, value in data.items():
         seen.add(value)
 
 print(unique_dict)
+
+
+
+## Extra 4: Palabras únicas por longitud
+"""
+Dada una lista de palabras, extraer solo una palabra por cada longitud distinta usando un set.
+"""
+
+words = ["tree", "sun", "moon", "cat", "river", "sky", "star"]
+
+lengths_seen = set()
+unique_by_length = []
+
+for word in words:
+    l = len(word)
+    if l not in lengths_seen:
+        unique_by_length.append(word)
+        lengths_seen.add(l)
+
+print(unique_by_length)
+    
+
+
+## Extra 5: Frecuencia de letras en una lista de palabras
+"""
+Contar cuántas veces aparece cada letra en una lista de palabras.
+"""
+
+words = ["dog", "cat", "duck"]
+
+letter_counts = {}
+
+for word in words:
+    for letter in word:
+        if letter in letter_counts:
+            letter_counts[letter] += 1
+        else
+            letter_counts[letter] = 1
+
+print(letter_counts)
